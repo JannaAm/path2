@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "573c7dd0-7321-4ac9-8ed1-c0f887ebfc7a",
+		"name": "Задание 1: «Испытание стойкости»",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27267689"
+	},
+	"item": [
+		{
+			"name": "Получение информации об актуальных списках Safe Browsing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASEurl}}/{{ver}}/threatLists?{{key}}",
+					"host": [
+						"{{BASEurl}}"
+					],
+					"path": [
+						"{{ver}}",
+						"threatLists"
+					],
+					"query": [
+						{
+							"key": "{{key}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка первого url на содержание в списке Safe Browsing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"threatType\": \"MALWARE\",\r\n    \"platformType\": \"OSX\",\r\n    \"threatEntryType\": \"URL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEurl}}/{{ver}}/threatMatches:find?{{key}}",
+					"host": [
+						"{{BASEurl}}"
+					],
+					"path": [
+						"{{ver}}",
+						"threatMatches:find"
+					],
+					"query": [
+						{
+							"key": "{{key}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка второго url на содержание в списке Safe Browsing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"threatType\": \"MALWARE\",\r\n    \"platformType\": \"ANY_PLATFORM\",\r\n    \"threatEntryType\": \"URL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEurl}}/{{ver}}/threatMatches:find?{{key}}",
+					"host": [
+						"{{BASEurl}}"
+					],
+					"path": [
+						"{{ver}}",
+						"threatMatches:find"
+					],
+					"query": [
+						{
+							"key": "{{key}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка третьего url на содержание в списке Safe Browsing Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"threatType\": \"MALWARE\",\r\n    \"platformType\": \"PLATFORM_TYPE_UNSPECIFIED\",\r\n    \"threatEntryType\": \"URL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEurl}}/{{ver}}/threatMatches:find?{{key}}",
+					"host": [
+						"{{BASEurl}}"
+					],
+					"path": [
+						"{{ver}}",
+						"threatMatches:find"
+					],
+					"query": [
+						{
+							"key": "{{key}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASEurl",
+			"value": "https://sba.yandex.net",
+			"type": "string"
+		},
+		{
+			"key": "key",
+			"value": "fb4c51ee-bf72-41e9-bc7b-fb5963a4c8ea",
+			"type": "string"
+		},
+		{
+			"key": "ver",
+			"value": "v4",
+			"type": "string"
+		}
+	]
+}

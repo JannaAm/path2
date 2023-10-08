@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "9022d8ed-0007-4c7f-afdf-0606ac884047",
+		"name": "Задача 2. \"Испытание стойкости\"",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27267689"
+	},
+	"item": [
+		{
+			"name": "Добавление одной единицы товара в корзину",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "web-gate.chitai-gorod.ru"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "cookie",
+						"value": "__ddg1_=l7pxtwCGyVx5xlJDXbA6; chg_visitor_id=7ef1d45c-3b8a-413e-96e8-ed2c272da241; refresh-token=dGhrM1ipf1FMqJfYT2wyz5DtYJVW2iRYhHG07cH0dCy671Us5QOYtD9NiTKvseOhHolVGqhlKsoyS2MQ; access-token=Bearer%20eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs; __ddg5_=Tl7V1aQGW5PNlTvT; __ddg2_=uWqTqdulT8uBbuh8"
+					},
+					{
+						"key": "dnt",
+						"value": "1"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.chitai-gorod.ru"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.chitai-gorod.ru/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2031031,\r\n    \"adData\": {\r\n        \"item_list_name\": \"product-page\",\r\n        \"product_shelf\": \"\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/{{c}}/{{P}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"{{c}}",
+						"{{P}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Просмотр товаров в корзине",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "web-gate.chitai-gorod.ru"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+					},
+					{
+						"key": "cookie",
+						"value": "__ddg1_=l7pxtwCGyVx5xlJDXbA6; chg_visitor_id=7ef1d45c-3b8a-413e-96e8-ed2c272da241; refresh-token=dGhrM1ipf1FMqJfYT2wyz5DtYJVW2iRYhHG07cH0dCy671Us5QOYtD9NiTKvseOhHolVGqhlKsoyS2MQ; access-token=Bearer%20eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs"
+					},
+					{
+						"key": "dnt",
+						"value": "1"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.chitai-gorod.ru"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.chitai-gorod.ru/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/{{c}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"{{c}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение количества одного товара в корзине",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authority",
+						"value": "web-gate.chitai-gorod.ru"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "cookie",
+						"value": "__ddg1_=l7pxtwCGyVx5xlJDXbA6; chg_visitor_id=7ef1d45c-3b8a-413e-96e8-ed2c272da241; refresh-token=dGhrM1ipf1FMqJfYT2wyz5DtYJVW2iRYhHG07cH0dCy671Us5QOYtD9NiTKvseOhHolVGqhlKsoyS2MQ; access-token=Bearer%20eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs; __ddg5_=Tl7V1aQGW5PNlTvT; __ddg2_=uWqTqdulT8uBbuh8"
+					},
+					{
+						"key": "dnt",
+						"value": "1"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.chitai-gorod.ru"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.chitai-gorod.ru/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": 85603626,\r\n        \"quantity\": 2\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/{{c}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"{{c}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Просмотр товаров в корзине",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "web-gate.chitai-gorod.ru"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+					},
+					{
+						"key": "cookie",
+						"value": "__ddg1_=l7pxtwCGyVx5xlJDXbA6; chg_visitor_id=7ef1d45c-3b8a-413e-96e8-ed2c272da241; refresh-token=dGhrM1ipf1FMqJfYT2wyz5DtYJVW2iRYhHG07cH0dCy671Us5QOYtD9NiTKvseOhHolVGqhlKsoyS2MQ; access-token=Bearer%20eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs; __ddg5_=Tl7V1aQGW5PNlTvT; __ddg2_=uWqTqdulT8uBbuh8"
+					},
+					{
+						"key": "dnt",
+						"value": "1"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.chitai-gorod.ru"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.chitai-gorod.ru/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/{{c}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"{{c}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление товара из корзины",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authority",
+						"value": "web-gate.chitai-gorod.ru"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+					},
+					{
+						"key": "cookie",
+						"value": "__ddg1_=l7pxtwCGyVx5xlJDXbA6; chg_visitor_id=7ef1d45c-3b8a-413e-96e8-ed2c272da241; refresh-token=dGhrM1ipf1FMqJfYT2wyz5DtYJVW2iRYhHG07cH0dCy671Us5QOYtD9NiTKvseOhHolVGqhlKsoyS2MQ; access-token=Bearer%20eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTQxNzg1LCJpYXQiOjE2OTY3MzY3NjksImV4cCI6MTY5Njc0MDM2OSwidHlwZSI6MjB9.Um2kSIPTlOe5Fp-Crvoh5sqVVnHQuzO8XZJf0ZYnCLs; __ddg5_=Tl7V1aQGW5PNlTvT; __ddg2_=uWqTqdulT8uBbuh8"
+					},
+					{
+						"key": "dnt",
+						"value": "1"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.chitai-gorod.ru"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.chitai-gorod.ru/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/{{c}}/{{P}}/85603626",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"{{c}}",
+						"{{P}}",
+						"85603626"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://web-gate.chitai-gorod.ru"
+		},
+		{
+			"key": "c",
+			"value": "cart",
+			"type": "string"
+		},
+		{
+			"key": "P",
+			"value": "product",
+			"type": "string"
+		}
+	]
+}
