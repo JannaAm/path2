@@ -1,3 +1,5 @@
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Testing+student+QA)](https://git.io/typing-svg)
+
 ## ❤Испытание 2: «Испытание стойкости»❤
 
 ### 👏 Задача 1 
